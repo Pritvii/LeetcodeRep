@@ -27,7 +27,7 @@ public:
                 if(val%2 == 0){
                 sum_even+=val;
                 ans.push_back(sum_even);
-                }
+                    }
                 else
                 {
                     sum_even-=temp;
