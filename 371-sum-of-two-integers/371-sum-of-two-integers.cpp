@@ -1,6 +1,11 @@
 class Solution {
 public:
-    int getSum(int a, int b) {
-        return a+b;
+    int getSum(int x, int y) {
+        while(y!=0){
+           unsigned int carry = x&y;
+            x = x^y;
+            y = carry << 1;
+        }
+        return x;
     }
 };
