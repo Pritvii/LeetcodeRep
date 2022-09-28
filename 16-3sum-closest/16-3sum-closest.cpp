@@ -11,7 +11,8 @@ public:
             int j = nums.size() - 1;
             while(k < j)
             {
-                
+                    if(nums[k] + nums[j]  + nums[i] == target)
+                        return target;
                 
                     if(nums[k] + nums[j]  + nums[i] > target)
                     {   int temp = ans;
