@@ -2,7 +2,7 @@ class Solution {
 public:
     int dp[101][101];
     int solve(vector<vector<int >>& grid  , int i ,  int j , int m , int n){
-                    cout<<i<<" "<<j<<endl;
+        //cout<<i<<" "<<j<<endl;
 
         if(i == m){
             return j;
@@ -23,7 +23,9 @@ public:
             if(j == n-1){
                 return -2;
             }
-            return solve(grid,i+1,j+1,m,n);
+            if(dp[i][j]!=-1)
+                return dp[i][j];
+            return dp[i][j] = solve(grid,i+1,j+1,m,n);
         }else{
             //move to left
             if(j>0){
@@ -34,8 +36,9 @@ public:
             if(j == 0){
                 return -2;
             }
-            
-            return solve(grid,i+1,j-1,m,n);
+            if(dp[i][j]!=-1)
+                return dp[i][j];
+            return dp[i][j] = solve(grid,i+1,j-1,m,n);
         }
     }
     vector<int> findBall(vector<vector<int>>& grid) {
