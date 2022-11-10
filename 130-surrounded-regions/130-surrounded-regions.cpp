@@ -33,7 +33,7 @@ public:
                 if(i == 0 || i == m-1 || j == 0 || j == n-1)
                 {
                     if(visited[i][j]==0 && board[i][j] == 'O')
-                    {   cout<<i<<" "<<j<<endl;
+                    {   
                         dfs(board , i  , j  , m-1 , n-1 );
                     }
                 }
